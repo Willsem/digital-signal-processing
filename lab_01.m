@@ -3,8 +3,8 @@ function lab_01
     A = 1;
     sigma = 1;
 
-    count_points = input("Input count of points: ");
-    step_x = input("Input step for x values: ");
+    count_points = input("Введите количество точек: ");
+    step_x = input("Введите шаг для значений x: ");
 
     max_x = step_x * (count_points - 1) / 2;
 
@@ -28,20 +28,20 @@ function lab_01
     
     figure;
     subplot(2,1,1);
-    title("Gaussian filter");
+    title("Функция Гаусса");
     hold on;
     grid on;
     plot(x_reference, gauss_reference, "b");
     plot(x_reference, gauss_restored, "r");
-    legend("Reference", "Restored");
+    legend("Исходный", "Восстановленный");
     
     subplot(2,1,2);
-    title("Rectangular function");
+    title("Прямоугольная функция");
     hold on;
     grid on;
     plot(x_reference, rect_reference, "b");
     plot(x_reference, rect_restored, "r");
-    legend("Reference", "Restored");
+    legend("Исходный", "Восстановленный");
 end
 
 function rect = generate_rect(x, L)
