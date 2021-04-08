@@ -31,22 +31,18 @@ function lab_04
     % PLOTTING
     %
 
-    figure(1)
+    figure;
+    subplot(3, 1, 1);
     plot(t,x0,t,x1,t,x2);
     title('Original signals');
     legend('Without noise','Gaussian noise','Impulsive noise');
 
-    figure(2)
-    plot(t,x0,t,filtfilt(B,A,x1),t,filtfilt(B,A,x2));
-    title('Recursive Butterworth filtering');
-    legend('Without noise','Gaussian noise','Impulsive noise');
-
-    figure(3)
+    subplot(3, 1, 2);
     plot(t,x0,t,filtfilt(G,1,x1),t,filtfilt(G,1,x2));
     title('Gaussian filtering');
     legend('Without noise','Gaussian noise','Impulsive noise');
 
-    figure(4)
+    subplot(3, 1, 3);
     plot(t,x0,t,filtfilt(BB,1,x1),t,filtfilt(BB,1,x2));
     title('Non-recursive Butterworth filtering');
     legend('Without noise','Gaussian noise','Impulsive noise');
@@ -54,7 +50,7 @@ end
 
 % Gaussian pulse generation
 function y = gauspls(x,s)
-y = exp(-(x/s).^2);
+    y = exp(-(x/s).^2);
 end
 
 % Impulsive noise generation

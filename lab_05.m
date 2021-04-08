@@ -32,22 +32,18 @@ function lab_05
     % PLOTTING
     %
 
-    figure(1)
+    figure;
+    subplot(3, 1, 1);
     plot(t,x0,t,x1,t,x2);
     title('Original signals');
     legend('Without noise','Impulsive noise','Gaussian noise');
 
-    figure(2)
-    plot(t,x0,t,filtfilt(B,A,x1),t,filtfilt(B,A,x2));
-    title('Recursive Butterworth filtering');
-    legend('Without noise','Impulsive noise','Gaussian noise');
-
-    figure(3)
+    subplot(3, 1, 2);
     plot(t,x0,t,x1-filtfilt(G,1,x1),t,x2-filtfilt(G,1,x2));
     title('Non-recursive Gaussian filtering');
     legend('Without noise','Impulsive noise','Gaussian noise');
 
-    figure(4)
+    subplot(3, 1, 3);
     plot(t,x0,t,x1-filtfilt(BB,1,x1),t,x2-filtfilt(BB,1,x2));
     title('Non-recursive Butterworth filtering');
     legend('Without noise','Impulsive noise','Gaussian noise');
