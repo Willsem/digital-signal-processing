@@ -5,7 +5,7 @@ function lab_09()
     imshow(I); 
     title('Исходное изображение');
 
-    PSF=fspecial('motion', 54, 65);
+    PSF=fspecial('motion', 55, 205);
     [J1 P1]=deconvblind(I, PSF);
     figure;
     imshow(J1);
