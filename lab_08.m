@@ -29,9 +29,11 @@ function lab_08()
 
     figure;
     subplot(2, 1, 1);
+    title('MEAN-функция фильтрации');
     hold on; 
     plot(x, uxbase);
     plot(x, ux); 
+    legend('Исходный гауссовский сигнал', 'Сглаженный сигнал');
     hold off; 
 
     uxbase = mygaussignal(x);
@@ -50,9 +52,11 @@ function lab_08()
     end
 
     subplot(2, 1, 2);
+    title('MED-функция фильтрации');
     hold on; 
     plot(x, uxbase);
     plot(x, ux); 
+    legend('Исходный гауссовский сигнал', 'Сглаженный сигнал');
     hold off;
 end
 
